@@ -12,7 +12,7 @@ function Home() {
             <Navbar1 />
             <header className="App-header">
                 <Container>
-                    <h1>Coffee</h1>
+                    <h1>Coffeee</h1>
                     <div>
                         <Button href='/menu'onClick={localStorage.setItem('toGo', false)}>Dine In</Button>
                         <Button href='/menu'onClick={localStorage.setItem('toGo', true)}>To Go</Button>
