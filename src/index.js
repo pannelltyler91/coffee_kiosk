@@ -3,11 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {configureStore} from '@reduxjs/toolkit'
+import {Provider} from 'react-redux';
+import {BrowserRouter as Router} from 'react-router-dom'
+import icedReducer from './features/icedCoffee';
+import hotReducer from './features/hotCoffee'
+import cartReducer from './features/cart';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = configureStore({
+  reducer:{
+    icedcoffee:icedReducer,
+    hotcoffee:hotReducer,
+    cart:cartReducer,
+  },
+})
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router>
+        <App/>
+      </Router>
+    </Provider>
   </React.StrictMode>
 );
 
