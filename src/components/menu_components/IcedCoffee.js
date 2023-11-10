@@ -19,7 +19,7 @@ function IcedCoffee(){
                             <Card.Title>{coffee.name}</Card.Title>
                             <Card.Body>
                                 <Card.Text>Price:{coffee.price}</Card.Text>
-                                <Options/>
+                                <Options coffee={coffee.name}  />
                             </Card.Body>
                         </Card>
                         </Col>

@@ -6,8 +6,9 @@ import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { addToCart } from '../../features/cart';
 import { useDispatch } from 'react-redux';
+import Form from 'react-bootstrap/Form'
 
-function Options() {
+function Options(coffee,price) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -24,13 +25,14 @@ function Options() {
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Options</Offcanvas.Title>
                 </Offcanvas.Header>
+                <Form onSubmit={(e) => {e.preventDefault();dispatch(addToCart({item:coffee.coffee,sweet:e.target.options.value,ice:e.target.options2.value,shot:e.target.options3.value,toGo:localStorage.getItem('toGo'),price:price}))}}>
                 <Offcanvas.Body>
                     <Row>
                     <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-                            <ToggleButton id="tbg-radio-2" value={2}>
+                            <ToggleButton id="tbg-radio-2" value='MoreSweet'>
                                 More Sweet
                             </ToggleButton>
-                            <ToggleButton id="tbg-radio-3" value={3}>
+                            <ToggleButton id="tbg-radio-3" value='LessSweet'>
                                 Less Sweet
                             </ToggleButton>
                         </ToggleButtonGroup>
@@ -38,10 +40,10 @@ function Options() {
                     <br/>
                     <Row>
                         <ToggleButtonGroup type="radio" name="options2" defaultValue={4}>
-                            <ToggleButton id="tbg-radio-5" value={4}>
+                            <ToggleButton id="tbg-radio-5" value='MoreIce'>
                                 More Ice
                             </ToggleButton>
-                            <ToggleButton id="tbg-radio6" value={5}>
+                            <ToggleButton id="tbg-radio6" value='LessIce'>
                                Less Ice
                             </ToggleButton>
                         </ToggleButtonGroup>
@@ -49,20 +51,23 @@ function Options() {
                     <br/>
                     <Row>
                         <ToggleButtonGroup type="radio" name="options3" defaultValue={6}>
-                            <ToggleButton id="tbg-radio-6" value={6}>
+                            <ToggleButton id="tbg-radio-6" value="AddShot">
                                 Add a Shot
                             </ToggleButton>
-                            <ToggleButton id="tbg-radio7" value={7}>
+                            <ToggleButton id="tbg-radio7" value='Decaffeine'>
                                Decaffeine
                             </ToggleButton>
                         </ToggleButtonGroup>
                     </Row>
                     <br/>
-                    <Button onClick={(e) => { e.preventDefault(); dispatch(addToCart({item:'hi'}))}}>Add to Cart</Button>
+                    <Button type='submit'>Add to Cart</Button>
                 </Offcanvas.Body>
+                </Form>
             </Offcanvas>
         </>
     );
 }
+
+
 
 export default Options;
