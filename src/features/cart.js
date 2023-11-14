@@ -5,10 +5,16 @@ export const cartSlice = createSlice({
     initialState:{value:[],count:0,toGo:false},
     reducers:{
         addToCart: (state, action) => {
-            // const item = action.payload.item
-            // const id = action.payload.id
+            const existingItem = state.value.find((item) => item.id === action.payload.coffeeId)
+            if(existingItem){
+                existingItem.qty = existingItem.qty+=1
+                state.count +=1
+            } else{
+                state.count +=1
+                state.value = [...state.value,action.payload]
+            }
             // state.count += 1
-            // state.value = [...state.value,{item,id}]
+            // state.value = [...state.value,action.payload]
             // console.log(state.value)
             console.log(action.payload)
             

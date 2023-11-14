@@ -10,7 +10,6 @@ function HotCoffee(){
     const icedCoffeeMenu = useSelector((state) => state.hotcoffee.value)
     return(
         <Container>
-            <MenuNav/>
             <Row>
                 {icedCoffeeMenu.map((coffee) => {
                     return(

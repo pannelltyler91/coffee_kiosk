@@ -1,5 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import { useSelector } from 'react-redux';
@@ -10,7 +11,6 @@ function IcedCoffee(){
     const icedCoffeeMenu = useSelector((state) => state.icedcoffee.value)
     return(
         <Container>
-            <MenuNav/>
             <Row>
                 {icedCoffeeMenu.map((coffee) => {
                     return(
@@ -19,7 +19,7 @@ function IcedCoffee(){
                             <Card.Title>{coffee.name}</Card.Title>
                             <Card.Body>
                                 <Card.Text>Price:{coffee.price}</Card.Text>
-                                <Options coffee={coffee.name}  />
+                                <Options coffeeName={coffee.name} qty={coffee.quantity} coffeeId={coffee.id} coffeePrice={coffee.price} />
                             </Card.Body>
                         </Card>
                         </Col>

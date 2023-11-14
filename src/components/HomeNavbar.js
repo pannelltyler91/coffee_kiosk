@@ -7,7 +7,7 @@ function HomeNavbar1() {
   return (
     <Navbar style={{backgroundColor:'#A47C6F'}} variant="dark">
       <Container>
-        <Navbar.Brand href="/">Coffee</Navbar.Brand>
+        <Navbar.Brand href="/">CoffeeKiosk</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/">English</Nav.Link>
           <Nav.Link href="/korean">한국어</Nav.Link>

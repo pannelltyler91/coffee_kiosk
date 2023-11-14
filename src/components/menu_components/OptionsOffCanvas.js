@@ -8,7 +8,7 @@ import { addToCart } from '../../features/cart';
 import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form'
 
-function Options(coffee,price) {
+function Options({coffeeName,qty,coffeeId,coffeePrice}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -25,7 +25,7 @@ function Options(coffee,price) {
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Options</Offcanvas.Title>
                 </Offcanvas.Header>
-                <Form onSubmit={(e) => {e.preventDefault();dispatch(addToCart({item:coffee.coffee,sweet:e.target.options.value,ice:e.target.options2.value,shot:e.target.options3.value,toGo:localStorage.getItem('toGo'),price:price}))}}>
+                <Form onSubmit={(e) => {e.preventDefault();dispatch(addToCart({item:coffeeName,coffeeId:coffeeId,coffeePrice:coffeePrice,sweet:e.target.options.value,ice:e.target.options2.value,shot:e.target.options3.value,toGo:localStorage.getItem('toGo'), qty:qty+1}))}}>
                 <Offcanvas.Body>
                     <Row>
                     <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
@@ -34,6 +34,9 @@ function Options(coffee,price) {
                             </ToggleButton>
                             <ToggleButton id="tbg-radio-3" value='LessSweet'>
                                 Less Sweet
+                            </ToggleButton>
+                            <ToggleButton id="tbg-radio-3-2" value='Regular'>
+                                Regular
                             </ToggleButton>
                         </ToggleButtonGroup>
                     </Row>
@@ -46,6 +49,9 @@ function Options(coffee,price) {
                             <ToggleButton id="tbg-radio6" value='LessIce'>
                                Less Ice
                             </ToggleButton>
+                            <ToggleButton id="tbg-radio6-2" value='Regular'>
+                               Regular
+                            </ToggleButton>
                         </ToggleButtonGroup>
                     </Row>
                     <br/>
@@ -57,10 +63,13 @@ function Options(coffee,price) {
                             <ToggleButton id="tbg-radio7" value='Decaffeine'>
                                Decaffeine
                             </ToggleButton>
+                            <ToggleButton id="tbg-radio7-2" value='Regular'>
+                               Regular
+                            </ToggleButton>
                         </ToggleButtonGroup>
                     </Row>
                     <br/>
-                    <Button type='submit'>Add to Cart</Button>
+                    <Button type='submit' onClick={handleClose}>Add to Cart</Button>
                 </Offcanvas.Body>
                 </Form>
             </Offcanvas>
