@@ -6,6 +6,7 @@ import KoreanHome from "./components/KoreanHome";
 import SpanishHome from "./components/SpanishHome";
 import IcedCoffee from "./components/menu_components/IcedCoffee";
 import HotCoffee from "./components/menu_components/HotCoffe";
+import SignUp from "./components/SignUp";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/spanish" element={<SpanishHome/>} />
         <Route path="/icedcoffeeenglish" element={<IcedCoffee/>} />
         <Route path="/hotcoffeeenglish" element={<HotCoffee/>} />
+        <Route path="/signup" element={<SignUp/>} />
       </Routes>
     </div>
   );

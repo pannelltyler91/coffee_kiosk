@@ -1,10 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import { useSelector } from 'react-redux';
-import MenuNav from './MenuNav';
 import Options from './OptionsOffCanvas';
 
 function IcedCoffee(){

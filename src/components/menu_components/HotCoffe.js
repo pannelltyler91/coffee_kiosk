@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import { useSelector } from 'react-redux';
-import MenuNav from './MenuNav';
 import HotOptions from './HotOptionsOffCanvas';
 
 function HotCoffee(){
