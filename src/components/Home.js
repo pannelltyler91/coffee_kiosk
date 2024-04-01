@@ -13,11 +13,16 @@ function Home() {
     return (
         <div className="App">
             <Navbar1 />
+            
             <header className="App-header">
+            <h1>Coffee</h1>
+            <div style={{marginBottom:'200px'}}>
+                        <Button style={{margin:'15px'}} href='/signup' >Sign Up</Button>
+                        <Button  href='/'>Login</Button>
+                    </div>
                 <Container>
-                    <h1>Coffee</h1>
                     <div>
-                        <Button onClick={() => {
+                        <Button style={{margin:'15px'}} onClick={() => {
                             dispatch(hereToGo({toGo:false}))}} href='/menu' >Dine In</Button>
                         <Button onClick={() => {dispatch(hereToGo({toGo:true}))}} href='/menu'>To Go</Button>
                     </div>

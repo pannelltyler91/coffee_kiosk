@@ -13,7 +13,6 @@ function HomeNavbar1() {
           <Nav.Link href="/">English</Nav.Link>
           <Nav.Link href="/korean">한국어</Nav.Link>
           <Nav.Link href="/spanish">Español</Nav.Link>
-          <Nav.Link href="/signup">Sign Up</Nav.Link>
           <Nav.Link href="#pricing"></Nav.Link>
         </Nav>
         <h6>{auth?.currentUser?.email}</h6>

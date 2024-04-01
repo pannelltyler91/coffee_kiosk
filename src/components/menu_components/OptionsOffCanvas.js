@@ -29,10 +29,10 @@ function Options({coffeeName,qty,coffeeId,coffeePrice}) {
                 <Offcanvas.Body>
                     <Row>
                     <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-                            <ToggleButton id="tbg-radio-2" value='MoreSweet'>
+                            <ToggleButton id="tbg-radio-2" value='More Sweet'>
                                 More Sweet
                             </ToggleButton>
-                            <ToggleButton id="tbg-radio-3" value='LessSweet'>
+                            <ToggleButton id="tbg-radio-3" value='Less Sweet'>
                                 Less Sweet
                             </ToggleButton>
                             <ToggleButton id="tbg-radio-3-2" value='Regular'>
@@ -43,10 +43,10 @@ function Options({coffeeName,qty,coffeeId,coffeePrice}) {
                     <br/>
                     <Row>
                         <ToggleButtonGroup type="radio" name="options2" defaultValue={4}>
-                            <ToggleButton id="tbg-radio-5" value='MoreIce'>
+                            <ToggleButton id="tbg-radio-5" value='More Ice'>
                                 More Ice
                             </ToggleButton>
-                            <ToggleButton id="tbg-radio6" value='LessIce'>
+                            <ToggleButton id="tbg-radio6" value='Less Ice'>
                                Less Ice
                             </ToggleButton>
                             <ToggleButton id="tbg-radio6-2" value='Regular'>
@@ -57,7 +57,7 @@ function Options({coffeeName,qty,coffeeId,coffeePrice}) {
                     <br/>
                     <Row>
                         <ToggleButtonGroup type="radio" name="options3" defaultValue={6}>
-                            <ToggleButton id="tbg-radio-6" value="AddShot">
+                            <ToggleButton id="tbg-radio-6" value="Add Shot">
                                 Add a Shot
                             </ToggleButton>
                             <ToggleButton id="tbg-radio7" value='Decaffeine'>
