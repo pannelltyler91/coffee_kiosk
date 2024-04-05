@@ -5,7 +5,7 @@ export const cartSlice = createSlice({
     initialState:{value:[],count:0,toGo:false,total:0},
     reducers:{
         addToCart: (state, action) => {
-                
+                console.log(action.payload)
                 state.count +=1
                 state.total += parseInt(action.payload.coffeePrice)
                 state.value = [...state.value,action.payload]

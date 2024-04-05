@@ -6,20 +6,26 @@ import Button from "react-bootstrap/esm/Button";
 import { useSelector } from 'react-redux';
 import {db} from '../config/firebase';
 import {addDoc,collection} from 'firebase/firestore';
+import { useNavigate } from "react-router-dom";
+import { Timestamp } from "@firebase/firestore";
+
 
 function Checkout(){
     const cartCount = useSelector((state) =>state.cart.count )
     const cart = useSelector((state) => state.cart.value)
     const cartTotal = useSelector((state) =>state.cart.total )
     const cartRef = collection(db,"Orders")
+    const navigate = useNavigate();
+    let noteDate = Timestamp.fromDate(new Date());
 
     const submitCart = async () =>{
         try{
             await addDoc(cartRef,{
                 cart:cart,
                 cart_total:cartTotal,
-                order_id:Math.random()
+                order_time:noteDate
             })
+            navigate('/rewards')
         } catch (err){
             console.log(err)
         }
@@ -38,7 +44,7 @@ function Checkout(){
                                 )
                             })}
                         <Card.Body style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                            <Button  onClick={submitCart()}style={{width:'33%'}} >Checkout({cartCount})</Button>
+                            <Button  onClick={submitCart}style={{width:'33%'}} >Checkout({cartCount})</Button>
                         </Card.Body>
                         <Card.Footer>Total:${cartTotal}</Card.Footer>
                     </Card>

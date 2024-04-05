@@ -16,10 +16,6 @@ function Home() {
             
             <header className="App-header">
             <h1>Coffee</h1>
-            <div style={{marginBottom:'200px'}}>
-                        <Button style={{margin:'15px'}} href='/signup' >Sign Up</Button>
-                        <Button  href='/'>Login</Button>
-                    </div>
                 <Container>
                     <div>
                         <Button style={{margin:'15px'}} onClick={() => {

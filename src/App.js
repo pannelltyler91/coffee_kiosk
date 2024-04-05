@@ -6,7 +6,9 @@ import KoreanHome from "./components/KoreanHome";
 import SpanishHome from "./components/SpanishHome";
 import IcedCoffee from "./components/menu_components/IcedCoffee";
 import HotCoffee from "./components/menu_components/HotCoffe";
-import SignUp from "./components/SignUp";
+import Pay from "./components/Pay";
+import ThankYou from "./components/ThankYou";
+import Rewards from './components/Rewards';
 
 
 function App() {
@@ -19,7 +21,9 @@ function App() {
         <Route path="/spanish" element={<SpanishHome/>} />
         <Route path="/icedcoffeeenglish" element={<IcedCoffee/>} />
         <Route path="/hotcoffeeenglish" element={<HotCoffee/>} />
-        <Route path="/signup" element={<SignUp/>} />
+        <Route path="/pay" element={<Pay/>} />
+        <Route path="/thankyou" element={<ThankYou/>} />
+        <Route path="/rewards" element={<Rewards/>} />
       </Routes>
     </div>
   );

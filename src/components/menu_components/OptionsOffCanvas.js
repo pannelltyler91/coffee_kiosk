@@ -25,7 +25,7 @@ function Options({coffeeName,qty,coffeeId,coffeePrice}) {
                 <Offcanvas.Header closeButton>
                     <Offcanvas.Title>Options</Offcanvas.Title>
                 </Offcanvas.Header>
-                <Form onSubmit={(e) => {e.preventDefault();dispatch(addToCart({item:coffeeName,coffeeId:coffeeId,coffeePrice:coffeePrice,sweet:e.target.options.value,ice:e.target.options2.value,shot:e.target.options3.value,toGo:localStorage.getItem('toGo'), qty:qty+1}))}}>
+                <Form onSubmit={(e) => {e.preventDefault();dispatch(addToCart({item:coffeeName,coffeeId:coffeeId,coffeePrice:coffeePrice,sweet:e.target.options.value,ice:e.target.options2.value,shot:e.target.options3.value,toGo:localStorage.getItem('toGo')}))}}>
                 <Offcanvas.Body>
                     <Row>
                     <ToggleButtonGroup type="radio" name="options" defaultValue={1}>

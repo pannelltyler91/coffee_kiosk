@@ -16,7 +16,10 @@ function IcedCoffee(){
                 const menuCollectionRef = collection(db,"menu")
                 const menuData = await getDocs(menuCollectionRef);
                 const filteredMenuData = menuData.docs.map((doc) => ({...doc.data(),id:doc.id,}));
-                setMenu(filteredMenuData)
+                const icedFilteredMenuData = filteredMenuData.filter((coffee) => coffee.type === 'iced')
+                setMenu(icedFilteredMenuData)
+                
+                
             }catch(err) {
                 console.log(err);
             }

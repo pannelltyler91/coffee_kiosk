@@ -2,7 +2,6 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Container from 'react-bootstrap/Container'
-import {auth} from './config/firebase'
 
 function HomeNavbar1() {
   return (
@@ -15,7 +14,6 @@ function HomeNavbar1() {
           <Nav.Link href="/spanish">Español</Nav.Link>
           <Nav.Link href="#pricing"></Nav.Link>
         </Nav>
-        <h6>{auth?.currentUser?.email}</h6>
       </Container>
     </Navbar>
   );
