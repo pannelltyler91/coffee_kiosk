@@ -9,6 +9,7 @@ import HotCoffee from "./components/menu_components/HotCoffe";
 import Pay from "./components/Pay";
 import ThankYou from "./components/ThankYou";
 import Rewards from './components/Rewards';
+import Preview from "./components/Preview";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/pay" element={<Pay/>} />
         <Route path="/thankyou" element={<ThankYou/>} />
         <Route path="/rewards" element={<Rewards/>} />
+        <Route path="/preview" element={<Preview/>} />
       </Routes>
     </div>
   );

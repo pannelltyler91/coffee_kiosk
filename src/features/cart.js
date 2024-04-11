@@ -41,7 +41,7 @@ export const cartSlice = createSlice({
                     const rewardsRef = doc(db,'users',foundUser.id)
                     if(foundUser.rewards_total === 10){
                         await updateDoc(rewardsRef, {
-                            rewards_total: 0
+                            rewards_total: state.count
                           })
                         const discountItemLocation = state.value.length - 1;
                         const discountItem = state.value[discountItemLocation]

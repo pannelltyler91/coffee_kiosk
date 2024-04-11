@@ -44,9 +44,9 @@ function Checkout(){
                                 )
                             })}
                         <Card.Body style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                            <Button  onClick={submitCart}style={{width:'33%'}} >Checkout({cartCount})</Button>
+                            <Button  onClick={submitCart}style={{width:'33%'}} >Next({cartCount})</Button>
                         </Card.Body>
-                        <Card.Footer>Total:${cartTotal}</Card.Footer>
+                        <Card.Footer><strong>Total:${cartTotal}</strong></Card.Footer>
                     </Card>
                 </Col>
             </Row>
