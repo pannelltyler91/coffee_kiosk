@@ -15,7 +15,7 @@ function Pay() {
         setTimeout(() => {
           setLoadingComplete(true)
         }, 5000)
-      }, [])
+      }, [navigate])
 
     return (
         <Container  >

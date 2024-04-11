@@ -7,6 +7,8 @@ import { useDispatch,useSelector } from "react-redux";
 import {addPhnNmbr,clearPhnNmbr,deletePhnNmbrDigit,checkRewards} from '../features/cart';
 import { useNavigate } from "react-router-dom";
 
+
+
 function Rewards() {
 
     const dispatch = useDispatch();
@@ -49,7 +51,7 @@ function Rewards() {
             </Container>
             <Row>
                 <Col></Col>
-                <Col style={{border:'white solid 1px',backgroundColor:'#A47C6F',marginRight:'162px',borderRadius:'25px',display:'flex',justifyContent:'center',height:'100%',width:'100%'}}><Button  style={{border:'none',backgroundColor:'#A47C6F',borderRadius:'25px',display:'flex',justifyContent:'center',height:'100%',width:'100%'}} onClick={(e) =>{dispatch(checkRewards({message:'can we update?'}))}}>Continue</Button></Col>
+                <Col style={{border:'white solid 1px',backgroundColor:'#A47C6F',marginRight:'162px',borderRadius:'25px',display:'flex',justifyContent:'center',height:'100%',width:'100%'}}><Button  style={{border:'none',backgroundColor:'#A47C6F',borderRadius:'25px',display:'flex',justifyContent:'center',height:'100%',width:'100%'}} onClick={(e) => {dispatch(checkRewards({message:'can we update?'})); navigate('/pay')}}>Continue</Button></Col>
                 <Col></Col>
                 </Row>
         </Container>
