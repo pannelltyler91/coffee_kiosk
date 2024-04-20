@@ -3,11 +3,11 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Card from 'react-bootstrap/Card';
 import Button from "react-bootstrap/esm/Button";
-import { useSelector } from 'react-redux';
+import { useSelector} from 'react-redux';
 import {db} from '../config/firebase';
 import {addDoc,collection} from 'firebase/firestore';
-import { useNavigate } from "react-router-dom";
 import { Timestamp } from "@firebase/firestore";
+import {useNavigate} from 'react-router-dom';
 
 
 function Checkout(){
@@ -15,21 +15,26 @@ function Checkout(){
     const cart = useSelector((state) => state.cart.value)
     const cartTotal = useSelector((state) =>state.cart.total )
     const cartRef = collection(db,"Orders")
+
     const navigate = useNavigate();
     let noteDate = Timestamp.fromDate(new Date());
 
-    const submitCart = async () =>{
-        try{
-            await addDoc(cartRef,{
-                cart:cart,
-                cart_total:cartTotal,
-                order_time:noteDate
+    const submitCart = async () => {
+        try {
+         const createdOrderRef = await addDoc(cartRef, {
+                cart: cart,
+                cart_total: cartTotal,
+                order_time: noteDate
             })
+            localStorage.setItem('orderId', createdOrderRef.id)
+            localStorage.setItem('count', cartCount)
             navigate('/rewards')
-        } catch (err){
+
+        } catch (err) {
             console.log(err)
         }
     }
+    
     return(
         <Container className="mt-2" fluid>
             <Row className='mt-2'>
@@ -44,7 +49,7 @@ function Checkout(){
                                 )
                             })}
                         <Card.Body style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                            <Button  onClick={submitCart}style={{width:'33%'}} >Next({cartCount})</Button>
+                            <Button  onClick={submitCart}style={{width:'33%'}} >Continue({cartCount})</Button>
                         </Card.Body>
                         <Card.Footer><strong>Total:${cartTotal}</strong></Card.Footer>
                     </Card>
