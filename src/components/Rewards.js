@@ -13,8 +13,10 @@ function Rewards() {
     const phoneNumber = useSelector((state) => state.cart.phnNmbr)
     const navigate = useNavigate();
     const submitCheckRewards = () => {
-        dispatch(checkRewards({ message: 'can we update?' }))
-        navigate('/preview')
+        dispatch(checkRewards())
+        setTimeout(() => {
+            navigate('/preview')
+          }, 2000)
     }
 
     return (

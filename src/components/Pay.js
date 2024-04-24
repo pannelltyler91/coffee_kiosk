@@ -1,25 +1,22 @@
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Spinner from 'react-bootstrap/Spinner';
-import Row from 'react-bootstrap/Row';
-import { useState,useEffect, } from 'react';
+import { useEffect, } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
 function Pay() {
 
-    const [loadingComplete, setLoadingComplete] = useState(false);
     const navigate = useNavigate();
     
     useEffect(() => {
         setTimeout(() => {
-          setLoadingComplete(true)
+          navigate('/thankyou')
         }, 5000)
       }, [navigate])
 
     return (
-        <Container  >
-            { loadingComplete ? navigate('/thankyou') : <Row style={{margin:'100px'}}>
+        <Container>
             <Card>
                 <Card.Header style={{ display:'flex',justifyContent:'center'}}>Please insert your card</Card.Header>
                 <Card.Body style={{ display:'flex',justifyContent:'center'}}>
@@ -33,7 +30,6 @@ function Pay() {
 
                 </Card.Body>
             </Card>
-            </Row>  }
         </Container>
     ) 
 }

@@ -10,6 +10,7 @@ import { Timestamp } from "@firebase/firestore";
 import {useNavigate} from 'react-router-dom';
 
 
+
 function Checkout(){
     const cartCount = useSelector((state) =>state.cart.count )
     const cart = useSelector((state) => state.cart.value)
@@ -26,8 +27,9 @@ function Checkout(){
                 cart_total: cartTotal,
                 order_time: noteDate
             })
-            localStorage.setItem('orderId', createdOrderRef.id)
-            localStorage.setItem('count', cartCount)
+            localStorage.setItem('orderId', JSON.stringify(createdOrderRef.id))
+            localStorage.setItem('count', JSON.stringify(cartCount))
+            localStorage.setItem('cart', JSON.stringify(cart))
             navigate('/rewards')
 
         } catch (err) {

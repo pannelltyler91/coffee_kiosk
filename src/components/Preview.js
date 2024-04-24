@@ -11,19 +11,19 @@ import {useState,useEffect} from 'react';
 
 function Preview() {
 
-const [cart,setCart] = useState();
+const [previewCart,setPreviewCart] = useState();
 const [total,setTotal] = useState();
 const count = JSON.parse(localStorage.getItem('count'))
-// const navigate = useNavigate();
+const navigate = useNavigate();
 
     useEffect(() =>{
         const getOrder = async () =>{
             try{
-                const OrderRef = doc(db, "Orders", localStorage.getItem('orderId'));
-                const orderData = await getDoc(OrderRef);
+                const orderRef = doc(db, "Orders", JSON.parse(localStorage.getItem('orderId')));
+                const orderData = await getDoc(orderRef);
                 const order = orderData.data();
                 console.log(order)
-                setCart(order.cart)
+                setPreviewCart(order.cart)
                 setTotal(order.cart_total)
             }catch(err) {
                 console.log(err);
@@ -36,10 +36,10 @@ const count = JSON.parse(localStorage.getItem('count'))
         <Container className="mt-2" fluid>
             <h1>Preview</h1>
             <Row>
-            {cart.map((item) => {
+            { previewCart && previewCart.map((item) => {
                 return (
-                    <Col m={3}>
-                    <Card  key={item.coffeeId}>
+                    <Col m={3} key={item.coffeeId}>
+                    <Card >
                         <Card.Title>{item.item}</Card.Title>
                         <Card.Body>
                             <Card.Text><strong>Sweetness:</strong> {item.sweet}</Card.Text>
@@ -57,7 +57,7 @@ const count = JSON.parse(localStorage.getItem('count'))
                 <Card.Header>
                     <strong>Total:$</strong>{total}
                 </Card.Header>
-                <Button onClick={console.log('clicked')}>Checkout({count})</Button>
+                <Button onClick={() => {navigate('/pay')}}>Checkout({count})</Button>
 
             </Card>
         </Container>

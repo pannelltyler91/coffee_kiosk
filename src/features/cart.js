@@ -4,7 +4,7 @@ import {db} from '../components/config/firebase';
 
 export const cartSlice = createSlice({
     name:'cart',
-    initialState:{value:[],count:0,toGo:false,total:0,phnNmbr:'',rewardsCheckComplete:false},
+    initialState:{value:[],count:0,toGo:false,total:0,phnNmbr:''},
     reducers:{
         addToCart: (state, action) => {
                 console.log(action.payload)
@@ -49,48 +49,47 @@ export const cartSlice = createSlice({
                             rewards_total: count
                           })
                         //find order get last item in cart and update order total by subtracting price of last item
-                        const OrderRef = doc(db, "Orders", localStorage.getItem('orderId'));
+                        const OrderRef = doc(db, "Orders", JSON.parse(localStorage.getItem('orderId')));
                         const orderData = await getDoc(OrderRef);
                         const order = orderData.data();
                         const discountItemLocation = order.cart.length - 1;
                         const discountItem = order.cart[discountItemLocation]
-                        console.log(discountItem)
                         const discount = discountItem.coffeePrice
-                        //changing price of discounted item to 0 in cart
-                        const newCart = []
-                        order.cart.map((item) => {
-                            if (item.coffeeId === discountItem.coffeeId){
-                                //change price of discounted item
-                                item.coffeePrice = 0
-                                newCart.push(item)
-
-                            }else{
-                                newCart.push(item)
-
-                            }
-                            return(newCart)
-                        })
-
+                         //changing price of discounted item to 0 in cart
+                         const newCart = []
+                         order.cart.map((item) => {
+                             if (item.coffeeId === discountItem.coffeeId){
+                                 //change price of discounted item
+                                 item.coffeePrice = 0
+                                 newCart.push(item)
+ 
+                             }else{
+                                 newCart.push(item)
+ 
+                             }
+                             return(newCart)
+                         })
                         await updateDoc(OrderRef,{
                             cart_total: order.cart_total - discount,
-                            cart:newCart
+                            cart:newCart,
+                            discount:true
                         })
                     }else{
-                        //does not have enough rewards : add this order rewards
+                        //does not have enough rewards : add this order's rewards
                         await updateDoc(rewardsRef, {
                             rewards_total: foundUser.rewards_total + count
                           })
                         console.log('not there yet, but getting close')
                     }
                 }else{  
-                    //doesn't have rewards account : create account
+                    //doesn't have rewards account : create account and add this order's rewards
                  const usersCollectionRef2 = await addDoc(collection(db,"users"), {
                         phn_nmbr: state.phnNmbr,
                         rewards_total: count,
 
                       });
                       console.log("Document written with ID: ", usersCollectionRef2.id);
-                      state.rewardsCheckComplete = true;
+                      
                 }
                 
             
