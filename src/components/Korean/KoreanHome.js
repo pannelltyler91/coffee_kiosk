@@ -1,5 +1,5 @@
-import '../App.css'
-import Navbar1 from './HomeNavbar';
+import '../../App.css'
+import Navbar1 from '../HomeNavbar';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 

@@ -2,8 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import './App.css';
 import Menu from './components/Menu';
 import Home from "./components/Home";
-import KoreanHome from "./components/KoreanHome";
 import SpanishHome from "./components/SpanishHome";
+import KoreanHome from './components/Korean/KoreanHome'
 import IcedCoffee from "./components/menu_components/IcedCoffee";
 import HotCoffee from "./components/menu_components/HotCoffe";
 import Pay from "./components/Pay";
