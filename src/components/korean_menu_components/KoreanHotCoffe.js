@@ -7,7 +7,7 @@ import {getDocs,collection} from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import HotOptions from './KoreanHotOptionsOffCanvas';
 
-function IcedCoffee(){
+function KoreanHotCoffee(){
     const [menu,setMenu] = useState([]);
 
     useEffect(() =>{
@@ -48,4 +48,4 @@ function IcedCoffee(){
     )
 }
 
-export default IcedCoffee;
+export default KoreanHotCoffee;

@@ -4,11 +4,11 @@ import Row from 'react-bootstrap/Row';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { addToCart } from '../../features/cart';
+import { addToCart } from '../../../features/cart';
 import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form'
 
-function Options({coffeeName,qty,coffeeId,coffeePrice}) {
+function SpanishOptions({coffeeName,qty,coffeeId,coffeePrice}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -79,4 +79,4 @@ function Options({coffeeName,qty,coffeeId,coffeePrice}) {
 
 
 
-export default Options;
+export default SpanishOptions;

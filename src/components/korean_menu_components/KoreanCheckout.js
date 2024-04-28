@@ -11,7 +11,7 @@ import {useNavigate} from 'react-router-dom';
 
 
 
-function Checkout(){
+function KoreanCheckout(){
     const cartCount = useSelector((state) =>state.cart.count )
     const cart = useSelector((state) => state.cart.value)
     const cartTotal = useSelector((state) =>state.cart.total )
@@ -61,4 +61,4 @@ function Checkout(){
     )
 }
 
-export default Checkout;
+export default KoreanCheckout;

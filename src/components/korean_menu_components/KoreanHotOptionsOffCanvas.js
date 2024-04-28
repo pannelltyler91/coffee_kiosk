@@ -8,7 +8,7 @@ import { addToCart } from '../../features/cart';
 import { useDispatch } from 'react-redux';
 import Form from 'react-bootstrap/Form'
 
-function HotOptions({ coffeeName, coffeeId, coffeePrice }) {
+function KoreanHotOptions({ coffeeName, coffeeId, coffeePrice }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -65,4 +65,4 @@ function HotOptions({ coffeeName, coffeeId, coffeePrice }) {
 
 
 
-export default HotOptions;
+export default KoreanHotOptions;

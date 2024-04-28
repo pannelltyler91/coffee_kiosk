@@ -2,12 +2,12 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
-import {db} from '../config/firebase';
+import {db} from '../../config/firebase';
 import {getDocs,collection} from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import HotOptions from './SpanishHotOptionsOffCanvas';
 
-function IcedCoffee(){
+function SpanishHotCoffee(){
     const [menu,setMenu] = useState([]);
 
     useEffect(() =>{
@@ -48,4 +48,4 @@ function IcedCoffee(){
     )
 }
 
-export default IcedCoffee;
+export default SpanishHotCoffee;

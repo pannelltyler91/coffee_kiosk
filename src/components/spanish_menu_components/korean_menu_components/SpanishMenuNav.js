@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/esm/Container';
 
 
 
-function MenuNav() {
+function SpanishMenuNav() {
     return (
         <Container  style={{backgroundColor:'#A47C6F'}}>
             <Nav fill variant="tabs" defaultActiveKey="/home">
@@ -40,4 +40,4 @@ function MenuNav() {
     )
 }
 
-export default MenuNav;
+export default SpanishMenuNav;
