@@ -4,11 +4,11 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from "react-redux";
-import { addPhnNmbr, clearPhnNmbr, deletePhnNmbrDigit, checkRewards } from '../features/cart';
+import { addPhnNmbr, clearPhnNmbr, deletePhnNmbrDigit, checkRewards } from '../../features/cart';
 import { useNavigate } from "react-router-dom";
 
 
-function Rewards() {
+function SpanishRewards() {
     const dispatch = useDispatch();
     const phoneNumber = useSelector((state) => state.cart.phnNmbr)
     const navigate = useNavigate();
@@ -21,8 +21,8 @@ function Rewards() {
 
     return (
         <Container >
-            <h1>Rewards</h1>
-            <p style={{ marginBottom: '5px' }}>Please enter your phone number to gain/use rewards!</p>
+            <h1>Puntos</h1>
+            <p style={{ marginBottom: '5px' }}>Por favor ingrese su numero de telefono para accumular/usar sus puntos!</p>
             <Container style={{ margin: '5px', width: '75%' }} >
                 <Row>
                     <Card style={{ margin: '5px' }}>
@@ -47,18 +47,18 @@ function Rewards() {
                     <Col style={{ border: 'white solid 1px', margin: '10px', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button onClick={(e) => { dispatch(addPhnNmbr({ digit: e.target.value })) }} value='9' style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}>9</Button></Col>
                 </Row>
                 <Row>
-                    <Col style={{ border: 'white solid 1px', backgroundColor: '#A47C6F', margin: '10px', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button onClick={() => { dispatch(clearPhnNmbr({ message: "cleared" })) }} style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}>Clear</Button></Col>
+                    <Col style={{ border: 'white solid 1px', backgroundColor: '#A47C6F', margin: '10px', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button onClick={() => { dispatch(clearPhnNmbr({ message: "cleared" })) }} style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}>Borrar todo</Button></Col>
                     <Col style={{ border: 'white solid 1px', margin: '10px', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button onClick={(e) => { dispatch(addPhnNmbr({ digit: e.target.value })) }} value='0' style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}>0</Button></Col>
-                    <Col style={{ border: 'white solid 1px', backgroundColor: '#A47C6F', margin: '10px', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }} onClick={(e) => { dispatch(deletePhnNmbrDigit({ message: 'delete' })) }}>Delete</Button></Col>
+                    <Col style={{ border: 'white solid 1px', backgroundColor: '#A47C6F', margin: '10px', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }} onClick={(e) => { dispatch(deletePhnNmbrDigit({ message: 'delete' })) }}>Borrar</Button></Col>
                 </Row>
             </Container>
             <Row>
                 <Col></Col>
-                <Col style={{ border: 'white solid 1px', backgroundColor: '#A47C6F', marginRight: '162px', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }} onClick={submitCheckRewards}>Continue</Button></Col>
+                <Col style={{ border: 'white solid 1px', backgroundColor: '#A47C6F', marginRight: '162px', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }} onClick={submitCheckRewards}>Continuar</Button></Col>
                 <Col></Col>
             </Row>
         </Container>
     )
 }
 
-export default Rewards;
+export default SpanishRewards;

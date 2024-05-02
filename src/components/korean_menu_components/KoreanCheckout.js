@@ -30,7 +30,7 @@ function KoreanCheckout(){
             localStorage.setItem('orderId', JSON.stringify(createdOrderRef.id))
             localStorage.setItem('count', JSON.stringify(cartCount))
             localStorage.setItem('cart', JSON.stringify(cart))
-            navigate('/rewards')
+            navigate('/krewards')
 
         } catch (err) {
             console.log(err)
@@ -46,14 +46,14 @@ function KoreanCheckout(){
                                 return(
                                     <Card.Header key={item.coffeeId+Math.random()*10}>
                                         <h6>{item.item}</h6>
-                                        <Card.Text> <strong>Sweetness:</strong> {item.sweet} | <strong>Caffeine:</strong> {item.shot} | <strong>Ice:</strong> {item.ice}  </Card.Text>
+                                        <Card.Text> <strong>단맛:</strong> {item.sweet} | <strong>샷:</strong> {item.shot} | <strong>아이스:</strong> {item.ice}  </Card.Text>
                                     </Card.Header>
                                 )
                             })}
                         <Card.Body style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                            <Button  onClick={submitCart}style={{width:'33%'}} >Continue({cartCount})</Button>
+                            <Button  onClick={submitCart}style={{width:'33%'}} >다음({cartCount})</Button>
                         </Card.Body>
-                        <Card.Footer><strong>Total:${cartTotal}</strong></Card.Footer>
+                        <Card.Footer><strong>총계:{cartTotal}</strong></Card.Footer>
                     </Card>
                 </Col>
             </Row>

@@ -30,7 +30,7 @@ function SpanishCheckout(){
             localStorage.setItem('orderId', JSON.stringify(createdOrderRef.id))
             localStorage.setItem('count', JSON.stringify(cartCount))
             localStorage.setItem('cart', JSON.stringify(cart))
-            navigate('/rewards')
+            navigate('/srewards')
 
         } catch (err) {
             console.log(err)

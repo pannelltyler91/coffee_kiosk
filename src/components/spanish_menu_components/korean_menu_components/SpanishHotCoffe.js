@@ -36,7 +36,7 @@ function SpanishHotCoffee(){
                             <Card>
                             <Card.Title>{coffee.item}</Card.Title>
                             <Card.Body>
-                                <Card.Text>Price:${coffee.price}</Card.Text>
+                                <Card.Text>Precio:${coffee.price}</Card.Text>
                                 <HotOptions coffeeName={coffee.item}  coffeeId={coffee.id} coffeePrice={coffee.price} />
                             </Card.Body>
                         </Card>

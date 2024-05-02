@@ -13,11 +13,11 @@ function KoreanHotCoffee(){
     useEffect(() =>{
         const getMenu = async () =>{
             try{
-                const menuCollectionRef = collection(db,"menu")
+                const menuCollectionRef = collection(db,"kmenu")
                 const menuData = await getDocs(menuCollectionRef);
                 const filteredMenuData = menuData.docs.map((doc) => ({...doc.data(),id:doc.id,}));
-                const icedFilteredMenuData = filteredMenuData.filter((coffee) => coffee.type === 'hot')
-                setMenu(icedFilteredMenuData)
+                const hotFilteredMenuData = filteredMenuData.filter((coffee) => coffee.type === 'hot')
+                setMenu(hotFilteredMenuData)
                 
                 
             }catch(err) {

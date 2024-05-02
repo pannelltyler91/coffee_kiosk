@@ -15,13 +15,23 @@ import KoreanHotCoffee from "./components/korean_menu_components/KoreanHotCoffe"
 import KoreanHotOptions from "./components/korean_menu_components/KoreanHotOptionsOffCanvas";
 import KoreanIcedCoffee from "./components/korean_menu_components/KoreanIcedCoffee";
 import KoreanMenuNav from "./components/korean_menu_components/KoreanMenuNav";
+import KoreanPreview from "./components/Korean/KoreanPreview";
+import KoreanPay from "./components/Korean/KoreanPay";
+import KoreanThankYou from "./components//Korean/KoreanThankYou";
+import KoreanMenu from "./components/korean_menu_components/KoreanMenu";
 import KoreanOptions from "./components/korean_menu_components/KoreanOptionsOffCanvas";
 import SpanishCheckout from '../src/components/spanish_menu_components/korean_menu_components/SpanishCheckout'
 import SpanishHotCoffee from '../src/components/spanish_menu_components/korean_menu_components/SpanishHotCoffe'
 import SpanishIcedCoffee from '../src/components/spanish_menu_components/korean_menu_components/SpanishIcedCoffee'
 import SpanishHotOptions from '../src/components/spanish_menu_components/korean_menu_components/SpanishHotOptionsOffCanvas'
 import SpanishMenuNav from '../src/components/spanish_menu_components/korean_menu_components/SpanishMenuNav'
+import SpanishMenu from '../src/components/spanish_menu_components/korean_menu_components/SpanishMenu'
 import SpanishOptions from '../src/components/spanish_menu_components/korean_menu_components/SpanishOptionsOffCanvas'
+import SpanishPreview from '../src/components/spanish_menu_components/SpanishPreview'
+import SpanishRewards from '../src/components/spanish_menu_components/SpanishRewards'
+import SpanishPay from "./components/spanish_menu_components/SpanishPay";
+import SpanishThankYou from "./components/spanish_menu_components/SpanishThankYou";
+
 
 
 function App() {
@@ -37,10 +47,14 @@ function App() {
         <Route path="/rewards" element={<Rewards/>} />
         <Route path="/preview" element={<Preview/>} />
         <Route path="/korean" element={<KoreanHome/>} />
+        <Route path="/kthanks" element={<KoreanThankYou/>} />
+        <Route path="/kpay" element={<KoreanPay/>} />
+        <Route path="/kpreview" element={<KoreanPreview/>} />
         <Route path="/kcheck" element={<KoreanCheckout/>} />
         <Route path="/khotcoffee" element={<KoreanHotCoffee/>} />
         <Route path="/khotoption" element={<KoreanHotOptions/>} />
         <Route path="/kicecoffee" element={<KoreanIcedCoffee/>} />
+        <Route path="/kmenu" element={<KoreanMenu/>} />
         <Route path="/kmenunav" element={<KoreanMenuNav/>} />
         <Route path="/kiceoptions" element={<KoreanOptions/>} />
         <Route path="/spanish" element={<SpanishHome/>} />
@@ -49,7 +63,12 @@ function App() {
         <Route path="/shotoption" element={<SpanishHotOptions/>} />
         <Route path="/sicecoffee" element={<SpanishIcedCoffee/>} />
         <Route path="/smenunav" element={<SpanishMenuNav/>} />
+        <Route path="/smenu" element={<SpanishMenu/>} />
         <Route path="/siceoptions" element={<SpanishOptions/>} />
+        <Route path="/spreview" element={<SpanishPreview/>} />
+        <Route path="/srewards" element={<SpanishRewards/>} />
+        <Route path="/spay" element={<SpanishPay/>} />
+        <Route path="/sthanks" element={<SpanishThankYou/>} />
       
       </Routes>
     </div>
