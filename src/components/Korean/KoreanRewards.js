@@ -4,18 +4,19 @@ import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from "react-redux";
-import { addPhnNmbr, clearPhnNmbr, deletePhnNmbrDigit, checkRewards } from '../features/cart';
+import { addPhnNmbr, clearPhnNmbr, deletePhnNmbrDigit, checkRewards } from '../../features/cart';
 import { useNavigate } from "react-router-dom";
+import { BsBackspace } from "react-icons/bs";
+import { BsBan } from "react-icons/bs";
 
-
-function Rewards() {
+function KoreanRewards() {
     const dispatch = useDispatch();
     const phoneNumber = useSelector((state) => state.cart.phnNmbr)
     const navigate = useNavigate();
     const submitCheckRewards = () => {
         dispatch(checkRewards())
         setTimeout(() => {
-            navigate('/spreview')
+            navigate('/kpreview')
           }, 2000)
     }
 
@@ -47,9 +48,9 @@ function Rewards() {
                     <Col style={{ border: 'white solid 1px', margin: '10px', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button onClick={(e) => { dispatch(addPhnNmbr({ digit: e.target.value })) }} value='9' style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}>9</Button></Col>
                 </Row>
                 <Row>
-                    <Col style={{ border: 'white solid 1px', backgroundColor: '#A47C6F', margin: '10px', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button onClick={() => { dispatch(clearPhnNmbr({ message: "cleared" })) }} style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}></Button></Col>
+                    <Col style={{ border: 'white solid 1px', backgroundColor: '#A47C6F', margin: '10px', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button onClick={() => { dispatch(clearPhnNmbr({ message: "cleared" })) }} style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><BsBackspace /></Button></Col>
                     <Col style={{ border: 'white solid 1px', margin: '10px', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button onClick={(e) => { dispatch(addPhnNmbr({ digit: e.target.value })) }} value='0' style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}>0</Button></Col>
-                    <Col style={{ border: 'white solid 1px', backgroundColor: '#A47C6F', margin: '10px', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }} onClick={(e) => { dispatch(deletePhnNmbrDigit({ message: 'delete' })) }}>Delete</Button></Col>
+                    <Col style={{ border: 'white solid 1px', backgroundColor: '#A47C6F', margin: '10px', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }}><Button style={{ border: 'none', backgroundColor: '#A47C6F', borderRadius: '25px', display: 'flex', justifyContent: 'center', height: '100%', width: '100%' }} onClick={(e) => { dispatch(deletePhnNmbrDigit({ message: 'delete' })) }}><BsBan /></Button></Col>
                 </Row>
             </Container>
             <Row>
@@ -61,4 +62,4 @@ function Rewards() {
     )
 }
 
-export default Rewards;
+export default KoreanRewards;

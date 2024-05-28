@@ -20,6 +20,7 @@ import KoreanPay from "./components/Korean/KoreanPay";
 import KoreanThankYou from "./components//Korean/KoreanThankYou";
 import KoreanMenu from "./components/korean_menu_components/KoreanMenu";
 import KoreanOptions from "./components/korean_menu_components/KoreanOptionsOffCanvas";
+import KoreanRewards from '../src/components/Korean/KoreanRewards'
 import SpanishCheckout from '../src/components/spanish_menu_components/korean_menu_components/SpanishCheckout'
 import SpanishHotCoffee from '../src/components/spanish_menu_components/korean_menu_components/SpanishHotCoffe'
 import SpanishIcedCoffee from '../src/components/spanish_menu_components/korean_menu_components/SpanishIcedCoffee'
@@ -57,6 +58,7 @@ function App() {
         <Route path="/kmenu" element={<KoreanMenu/>} />
         <Route path="/kmenunav" element={<KoreanMenuNav/>} />
         <Route path="/kiceoptions" element={<KoreanOptions/>} />
+        <Route path="/krewards" element={<KoreanRewards/>} />
         <Route path="/spanish" element={<SpanishHome/>} />
         <Route path="/scheck" element={<SpanishCheckout/>} />
         <Route path="/shotcoffee" element={<SpanishHotCoffee/>} />

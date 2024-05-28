@@ -15,7 +15,7 @@ function Rewards() {
     const submitCheckRewards = () => {
         dispatch(checkRewards())
         setTimeout(() => {
-            navigate('/spreview')
+            navigate('/preview')
           }, 2000)
     }
 
