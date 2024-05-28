@@ -43,10 +43,10 @@ export const cartSlice = createSlice({
                 const count = JSON.parse(localStorage.getItem('count'))
                 if(foundUser){
                     const rewardsRef = doc(db,'users',foundUser.id)
-                    if(foundUser.rewards_total === 10){
+                    if(foundUser.rewards_total >= 10){
                         //use current rewards and update rewards total
                         await updateDoc(rewardsRef, {
-                            rewards_total: count
+                            rewards_total: foundUser.rewards_total - 10 + count
                           })
                         //find order get last item in cart and update order total by subtracting price of last item
                         const OrderRef = doc(db, "Orders", JSON.parse(localStorage.getItem('orderId')));
