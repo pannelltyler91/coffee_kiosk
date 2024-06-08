@@ -28,7 +28,7 @@ function IcedCoffee(){
     }, []);
 
     return(
-        <Container>
+        <Container fluid>
             <Row>
                 {menu.map((coffee) => {
                     return(

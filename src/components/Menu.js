@@ -9,12 +9,12 @@ import HotCoffee from "./menu_components/HotCoffe";
 
 function Menu() {
     return (
-        <Container fluid>
+        <Container  fluid>
             <Row><Navbar><NavbarBrand href='/'>CoffeeKiosk</NavbarBrand></Navbar></Row>
             <Row>
-                <Accordion defaultActiveKey="0" >
+                <Accordion defaultActiveKey="0" s >
                     <Accordion.Item eventKey="0">
-                        <Accordion.Header>Iced Coffee</Accordion.Header>
+                        <Accordion.Header >Iced Coffee</Accordion.Header>
                         <Accordion.Body>
                             <IcedCoffee/>
                         </Accordion.Body>
@@ -27,7 +27,7 @@ function Menu() {
                     </Accordion.Item>
                 </Accordion>
             </Row>
-            <Checkout/>
+            < Checkout/>
         </Container>
     )
 }
