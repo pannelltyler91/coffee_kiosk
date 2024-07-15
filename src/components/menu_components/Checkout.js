@@ -38,10 +38,10 @@ function Checkout(){
     }
     
     return(
-        <Container className="mt-2" fluid>
-            <Row className='mt-2'>
+        <Container  className="mt-2" fluid>
+            <Row className='mt'>
                 <Col md={12}>
-                    <Card>
+                    <Card style={{backgroundColor:'#f5f5dc'}}>
                     {cart.map((item) =>{
                                 return(
                                     <Card.Header key={item.coffeeId+Math.random()*10}>
@@ -51,9 +51,9 @@ function Checkout(){
                                 )
                             })}
                         <Card.Body style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
-                            <Button  onClick={submitCart}style={{width:'33%'}} >Continue({cartCount})</Button>
+                            <Button style={{backgroundColor:'#6f4e37',color:'#8db600',border:'#8db600',width:'33%'}}  onClick={submitCart} >Continue({cartCount})</Button>
                         </Card.Body>
-                        <Card.Footer><strong>Total:${cartTotal}</strong></Card.Footer>
+                        <Card.Footer style={{color:'#6f4e37'}}><strong>Total:${cartTotal}</strong></Card.Footer>
                     </Card>
                 </Col>
             </Row>

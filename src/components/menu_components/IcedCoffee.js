@@ -33,7 +33,7 @@ function IcedCoffee(){
                 {menu.map((coffee) => {
                     return(
                         <Col md={6} key={coffee.id}>
-                            <Card>
+                            <Card style={{backgroundColor:'#f5f5dc',color:'#6f4e37'}}>
                             <Card.Title>{coffee.item}</Card.Title>
                             <Card.Body>
                                 <Card.Text>Price:${coffee.price}</Card.Text>

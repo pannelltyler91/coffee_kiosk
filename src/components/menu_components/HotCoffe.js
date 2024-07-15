@@ -6,6 +6,7 @@ import {db} from '../config/firebase';
 import {getDocs,collection} from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import HotOptions from './HotOptionsOffCanvas';
+import "../../styles/HotCoffee.css"
 
 function IcedCoffee(){
     const [menu,setMenu] = useState([]);
@@ -28,12 +29,12 @@ function IcedCoffee(){
     }, []);
 
     return(
-        <Container>
+        <Container className='hot'>
             <Row>
                 {menu.map((coffee) => {
                     return(
                         <Col md={6} key={coffee.id}>
-                            <Card>
+                            <Card style={{backgroundColor:'#f5f5dc',color:'#6f4e37'}}>
                             <Card.Title>{coffee.item}</Card.Title>
                             <Card.Body>
                                 <Card.Text>Price:${coffee.price}</Card.Text>

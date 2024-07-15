@@ -17,7 +17,7 @@ function HotOptions({ coffeeName, coffeeId, coffeePrice }) {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button style={{backgroundColor:'#8db600',border:'#8db600'}} variant="primary" onClick={handleShow}>
                 Options
             </Button>
 

@@ -1,5 +1,4 @@
-import Image from 'react-bootstrap/Image'
-import pic1 from '../img/IMG_0835.jpg'
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -31,8 +30,7 @@ function Home() {
                     <Col><a href='/spanish'>Español</a></Col>
                 </Row>
             </Container>
-            <Row className='imgHolder'><Image src={pic1} style={{height:'300px',width:'300px'}}  /></Row>
-            <Row className='homeButtons'>
+            <Row className='homeButtons' fluid>
                 <Col xs={4}></Col>
                 <Col>
                     <Button style={{backgroundColor:'#8db600',border:'#8db600'}} onClick={() => {
